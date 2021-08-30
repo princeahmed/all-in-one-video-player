@@ -1,0 +1,9 @@
+{
+  "name": "radio-player/radio-player",
+  "title": "Radio Player",
+  "category": "media",
+  "description": "Live Shoutcast, Icecast and Audio Stream Player for WordPress.",
+  "textdomain": "radio-player",
+  "editorScript": "file:./block/build/index.js",
+  "style": "file:./block/build/style.css"
+}

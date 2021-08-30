@@ -1,0 +1,11 @@
+.aiovp.pip {
+  width: 300px;
+  height: 250px;
+  position: fixed;
+  right: 30px;
+  bottom: 100px; }
+  .aiovp.pip .aiovp_media {
+    width: 100% !important;
+    height: 100% !important; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvcGxheWVyL19wbGF5ZXIuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUdJLFlBQVk7RUFDWixhQUFhO0VBQ2IsZUFBZTtFQUNmLFdBQVc7RUFDWCxhQUFhLEVBQUE7RUFQakI7SUFVTSxzQkFBc0I7SUFDdEIsdUJBQXVCLEVBQUEiLCJmaWxlIjoiZnJvbnRlbmQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFpb3ZwIHtcclxuXHJcbiAgJi5waXAge1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICAgaGVpZ2h0OiAyNTBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHJpZ2h0OiAzMHB4O1xyXG4gICAgYm90dG9tOiAxMDBweDtcclxuXHJcbiAgICAuYWlvdnBfbWVkaWEge1xyXG4gICAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcclxuICAgIH1cclxuICB9XHJcbn0iXX0= */

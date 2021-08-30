@@ -1,0 +1,14 @@
+*.log
+node_modules
+/build
+composer.lock
+
+/package-lock.json
+block/package-lock.json
+block/webpack.config.js
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz

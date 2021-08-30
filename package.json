@@ -1,0 +1,64 @@
+{
+  "name": "all-in-one-video-player",
+  "version": "1.0.0",
+  "description": "Completed:\r ---\r 1.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/princeahmed/all-in-one-video-player.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/princeahmed/all-in-one-video-player/issues"
+  },
+  "homepage": "https://github.com/princeahmed/all-in-one-video-player#readme",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --prod"
+  },
+  "dependencies": {
+    "react-player": "^2.9.0",
+    "react-timer-hook": "^3.0.4"
+  },
+  "devDependencies": {
+    "classnames": "^2.3.1",
+    "postcss-loader": "^6.1.1",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.9.0",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^5.2.6",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-checktextdomain": "^2.2.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-filenames": "^4.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-wp-pot": "^2.3.6",
+    "gulp-zip": "^5.0.1",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "replace-in-file-webpack-plugin": "^1.0.6",
+    "sass": "^1.35.1",
+    "sass-loader": "^10",
+    "style-loader": "^2.0.0",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^5.42.0",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^15.1.0"
+  }
+}
