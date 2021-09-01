@@ -126,7 +126,7 @@ if ( ! class_exists( 'AIOVP_Rest_Api_Controller' ) ) {
 		public function set_player_data( $request ) {
 			$data = json_decode( $request->get_body() );
 
-			//error_log( print_r( $data, 1 ) );
+			error_log( print_r( $data, 1 ) );
 
 			$post_id = ! empty( $data->postID ) ? intval( $data->postID ) : '';
 			$title   = ! empty( $data->playerTitle ) ? sanitize_text_field( $data->playerTitle ) : '';

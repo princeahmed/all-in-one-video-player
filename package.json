@@ -19,12 +19,11 @@
     "build": "gulp build --prod"
   },
   "dependencies": {
+    "array-move": "^4.0.0",
     "react-player": "^2.9.0",
     "react-timer-hook": "^3.0.4"
   },
   "devDependencies": {
-    "classnames": "^2.3.1",
-    "postcss-loader": "^6.1.1",
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.9.5",
@@ -35,6 +34,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "browser-sync": "^2.26.7",
+    "classnames": "^2.3.1",
     "css-loader": "^5.2.6",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -52,6 +52,8 @@
     "gulp-zip": "^5.0.1",
     "node-sass": "^6.0.1",
     "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "react-sortable-hoc": "^2.0.0",
     "replace-in-file-webpack-plugin": "^1.0.6",
     "sass": "^1.35.1",
     "sass-loader": "^10",
