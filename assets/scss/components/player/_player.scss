@@ -1,4 +1,69 @@
 .aiovp {
+  position: relative;
+
+
+  &-playlist {
+    position: absolute;
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    background: rgba(#000, .5);
+    right: 0;
+    //top: 0;
+    padding: 10px;
+    z-index: 999;
+    color: #fff;
+
+    .playlist-controls {
+      margin-bottom: 15px;
+
+      &__autoplay {
+        display: flex;
+        align-items: center;
+
+        .components-form-toggle {
+          line-height: 1;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .playlist-item {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 5px;
+
+      img {
+        width: 50px;
+        min-width: 50px;
+        height: 30px;
+        border-radius: 5px;
+        margin-right: 5px;
+        object-fit: cover;
+      }
+
+      span {
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &.active {
+        background: #0170B9;
+        padding: 4px;
+        border-radius: 2px;
+      }
+
+    }
+
+  }
+
+  &_media {
+    background-size: cover !important;
+  }
 
   &.pip {
     width: 300px;

@@ -35,6 +35,7 @@ if ( ! class_exists( 'AIOVP_Enqueue' ) ) {
 			/* enqueue frontend script */
 			wp_enqueue_script( 'aiovp', AIOVP_ASSETS . '/js/frontend.min.js', array(
 				'wp-element',
+				'wp-components',
 				'wp-util',
 				'wp-api-fetch',
 			), AIOVP_VERSION, true );

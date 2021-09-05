@@ -1,12 +1,13 @@
 import ReactPlayer from "react-player";
 import classNames from "classnames";
 import Icons from '../components/Icons';
+import Playlist from "./Playlist";
 
 
 const {useState, useEffect, useRef} = wp.element;
 
 export default function Player({data}) {
-    let {id, videos, autoplay} = data;
+    let {id, videos} = data;
 
     const getVolume = () => {
         let volume = (aiovp.settings.volume / 100);
@@ -30,8 +31,11 @@ export default function Player({data}) {
     const [videoIndex, setVideoIndex] = useState(0);
     const [showPlaylist, setShowPlaylist] = useState(false);
     const [pip, setPip] = useState(false);
+    const [autoplay, setAutoplay] = useState(true);
 
-    let {video} = videos[videoIndex >= videos.length ? 0 : videoIndex];
+    const videoItem = videos[videoIndex >= videos.length ? 0 : videoIndex];
+
+    const {video, title, source, poster} = videoItem;
 
 
     /**
@@ -50,8 +54,8 @@ export default function Player({data}) {
     }, []);
 
     // Handle play-pause
-    const handlePlayPause = (isPlaying = playing) => {
-        setPlaying(!isPlaying);
+    const handlePlayPause = () => {
+        setPlaying(!playing);
     }
 
     /**
@@ -87,12 +91,13 @@ export default function Player({data}) {
             setVideoIndex(index);
         }
 
-        handlePlayPause(false);
+        setPlaying(true);
     }
 
     const handlePip = () => {
         setPip(!pip);
     }
+
 
     return (
         <>
@@ -117,17 +122,34 @@ export default function Player({data}) {
                             dangerouslySetInnerHTML={{__html: Icons('pip')}}
                     ></button>
 
+                    <button type={'button'}
+                            onClick={() => {
+                            }}
+                            dangerouslySetInnerHTML={{__html: Icons('playlist')}}
+                    ></button>
+
                 </div>
+
+                {videos.length > 1 &&
+                <Playlist videos={videos} setPlaying={setPlaying} setVideoIndex={setVideoIndex}
+                          videoIndex={videoIndex}
+                          autoplay={autoplay}
+                          setAutoplay={setAutoplay}
+                />
+                }
 
                 <ReactPlayer
                     className="aiovp_media"
+                    style={{
+                        background: `#000 url(${poster}) no-repeat`,
+                    }}
                     ref={playerRef}
                     volume={volume}
                     playing={playing}
                     pip={pip}
                     url={video}
                     controls={true}
-                    light={true}
+                    light={playing ? false : poster}
                     // config={{
                     //     youtube: {
                     //         playerVars: {
@@ -158,10 +180,18 @@ export default function Player({data}) {
                     }}
 
                     onEnded={() => {
-                        setPlaying(false);
-                        setBuffering(false);
+
+                        if (autoplay) {
+                            setVideoIndex(videoIndex + 1);
+                        } else {
+                            setPlaying(false);
+                            setBuffering(false);
+                        }
                     }}
 
+                    onClickPreview={() => {
+                        setPlaying(true);
+                    }}
                 />
 
             </div>

@@ -72,7 +72,7 @@ const SortableItem = SortableElement(({value, keyIndex, isActive, handleActive, 
                     {'SelfHosted' === source ?
                         <Uploader
                             media={video}
-                            onChange={media => handleChange({video: media.url})}
+                            onChange={media => handleChange({video: !!media ? media.url : ''})}
                             config={{
                                 title: 'Select Video',
                                 type: 'video',
@@ -94,7 +94,7 @@ const SortableItem = SortableElement(({value, keyIndex, isActive, handleActive, 
                 <div className={'form-field'}>
                     <Uploader
                         media={poster}
-                        onChange={media => handleChange({poster: media.url})}
+                        onChange={media => handleChange({poster: !!media ? media.url : ''})}
                         config={{
                             title: 'Select Image',
                             type: 'image',
@@ -138,7 +138,10 @@ const SortableList = SortableContainer(({items, active, setActive, onRemove, han
 });
 
 const SingleVideo = ({videos, handleChange}) => {
-    console.log(videos)
+
+    if (!videos.length) {
+        videos = [{}];
+    }
 
     const {title, video, source, poster} = videos[0];
 
@@ -182,7 +185,7 @@ const SingleVideo = ({videos, handleChange}) => {
                         {'SelfHosted' === source ?
                             <Uploader
                                 media={video}
-                                onChange={media => handleChange({video: media.url})}
+                                onChange={media => handleChange({video: !!media ? media.url : ''})}
                                 config={{
                                     title: 'Select Video',
                                     type: 'video',
@@ -204,7 +207,9 @@ const SingleVideo = ({videos, handleChange}) => {
                     <div className={'form-field'}>
                         <Uploader
                             media={poster}
-                            onChange={media => handleChange({poster: media.url})}
+                            onChange={media => {
+                                handleChange({poster: !!media ? media.url : ''})
+                            }}
                             config={{
                                 title: 'Select Image',
                                 type: 'image',

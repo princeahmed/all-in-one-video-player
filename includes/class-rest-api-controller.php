@@ -159,7 +159,7 @@ if ( ! class_exists( 'AIOVP_Rest_Api_Controller' ) ) {
 
 			$meta = [
 				'playerTitle' => get_the_title( $id ),
-				'videos'      => array_filter( aiovp_get_meta( $id, 'videos' ) ),
+				'videos'      => array_filter( aiovp_get_meta( $id, 'videos', [] ) ),
 				'playerType'  => aiovp_get_meta( $id, 'playerType' ),
 			];
 

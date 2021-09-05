@@ -1,5 +1,3 @@
-const {TextControl} = wp.components;
-
 export default function Uploader({media, onChange, config}) {
 
 
@@ -19,7 +17,6 @@ export default function Uploader({media, onChange, config}) {
         });
 
         file_frame.on('select', () => {
-
             const attachment = file_frame.state().get('selection').first().toJSON();
             onChange(attachment);
         });
@@ -28,10 +25,8 @@ export default function Uploader({media, onChange, config}) {
         file_frame.open();
     }
 
-    const deleteMedia = (e) => {
-        e.preventDefault();
-
-        onChange('')
+    const deleteMedia = () => {
+        onChange('');
     }
 
 
@@ -41,11 +36,12 @@ export default function Uploader({media, onChange, config}) {
                 <label htmlFor="">{config.label}</label>
 
                 <div className="form-group">
+
                     {'image' === config.type && !!media &&
                     <img src={media} className={'media-preview'}/>
                     }
 
-                    <input type="text" value={media} onChange={e => onChange(e.target.value)}/>
+                    <input type="text" value={media} onChange={ e => onChange(e.target.value) }/>
                 </div>
 
                 <button type={'button'} className="button button-primary select_video" onClick={openUploader}>

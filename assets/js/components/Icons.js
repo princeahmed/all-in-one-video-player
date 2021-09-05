@@ -9,6 +9,7 @@ export default function Icons(icon, size = 26) {
         pip: `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">    <path d="M22,18V6c0-1.105-0.895-2-2-2H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16C21.105,20,22,19.105,22,18z M19,18h-6 c-0.552,0-1-0.448-1-1v-4c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1v4C20,17.552,19.552,18,19,18z"></path></svg>`,
         fullscreen: ``,
         exitFullscreen: ``,
+        playlist: `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 320 320" ><g><g><rect y="96" width="256" height="42.667"/></g></g><g><g><rect y="10.667" width="256" height="42.667"/></g></g><g><g><rect y="181.333" width="170.667" height="42.667"/></g></g><g><g><polygon points="213.333,181.333 213.333,309.333 320,245.333"/></g></g></svg>`,
     }
 
     return icons[icon];
