@@ -32,6 +32,7 @@ export default function Player({data}) {
     const [showPlaylist, setShowPlaylist] = useState(false);
     const [pip, setPip] = useState(false);
     const [autoplay, setAutoplay] = useState(true);
+    const [skin, setSkin] = useState(2);
 
     const videoItem = videos[videoIndex >= videos.length ? 0 : videoIndex];
 
@@ -101,40 +102,38 @@ export default function Player({data}) {
 
     return (
         <>
-            <div className={classNames(`aiovp`, {pip})}>
+            <div className={classNames(`aiovp`, {pip}, `skin-${skin}`)}>
 
                 <div className="aiovp-controls">
                     <button type={'button'}
                             onClick={() => handleNextPrev('prev')}
-                            dangerouslySetInnerHTML={{__html: Icons('prev')}}
-                    ></button>
-                    <button type={'button'}
-                            onClick={handlePlayPause}
-                            dangerouslySetInnerHTML={{__html: playing ? Icons('pause') : Icons('play')}}
-                    ></button>
+                            dangerouslySetInnerHTML={{__html: Icons('prev')}}></button>
+
+                    {/*<button type={'button'}*/}
+                    {/*        onClick={handlePlayPause}*/}
+                    {/*        dangerouslySetInnerHTML={{__html: playing ? Icons('pause') : Icons('play')}}*/}
+                    {/*></button>*/}
+
                     <button type={'button'}
                             onClick={() => handleNextPrev('next')}
-                            dangerouslySetInnerHTML={{__html: Icons('next')}}
-                    ></button>
+                            dangerouslySetInnerHTML={{__html: Icons('next')}}></button>
 
-                    <button type={'button'}
+                    <button className={classNames('control-pip')} type={'button'}
                             onClick={handlePip}
-                            dangerouslySetInnerHTML={{__html: Icons('pip')}}
-                    ></button>
+                            dangerouslySetInnerHTML={{__html: Icons('pip')}}></button>
 
-                    <button type={'button'}
-                            onClick={() => {
-                            }}
-                            dangerouslySetInnerHTML={{__html: Icons('playlist')}}
-                    ></button>
+                    <button className={classNames('control-playlist')} type={'button'}
+                            onClick={() => setShowPlaylist(!showPlaylist)}
+                            dangerouslySetInnerHTML={{__html: Icons('playlist')}}></button>
 
                 </div>
 
-                {videos.length > 1 &&
+                {showPlaylist &&
                 <Playlist videos={videos} setPlaying={setPlaying} setVideoIndex={setVideoIndex}
                           videoIndex={videoIndex}
                           autoplay={autoplay}
                           setAutoplay={setAutoplay}
+                          setShowPlaylist={setShowPlaylist}
                 />
                 }
 

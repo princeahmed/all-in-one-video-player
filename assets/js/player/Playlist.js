@@ -1,8 +1,20 @@
 import classNames from "classnames";
+import Icons from "../components/Icons";
 
 const {FormToggle} = wp.components;
 
-export default function Playlist({videos, videoIndex, setVideoIndex, setPlaying, autoplay, setAutoplay}) {
+export default function Playlist({
+                                     videos,
+                                     videoIndex,
+                                     setVideoIndex,
+                                     setPlaying,
+                                     autoplay,
+                                     setAutoplay,
+                                     setShowPlaylist,
+                                 }) {
+
+    const skin = 1;
+
     return (
         <div className="aiovp-playlist">
 
@@ -11,26 +23,38 @@ export default function Playlist({videos, videoIndex, setVideoIndex, setPlaying,
                     <span>Autoplay : </span>
                     <FormToggle
                         checked={autoplay}
-                        onChnage={() => setAutoplay(!autoplay)}
+                        onChange={() => {
+                            setAutoplay(!autoplay)
+                        }}
                     />
                 </div>
+
+                {2 === skin &&
+                <button type={'button'}
+                        onClick={() => setShowPlaylist(!setShowPlaylist)}
+                        dangerouslySetInnerHTML={{__html: Icons('playlist')}}></button>}
+
             </div>
 
-            {videos.map(({title, poster}, index) => {
+            <div className="playlist-items">
+                {videos.map(({title, poster}, index) => {
 
-                return (
-                    <div className={classNames('playlist-item', {active: videoIndex === index})}
-                         onClick={() => {
-                             setVideoIndex(index);
-                             setPlaying(true);
-                         }}>
+                    poster = !!poster ? poster : aiovp.plugin_url + '/assets/images/thumbnail.svg';
 
-                        <img src={poster} alt={title}/>
-                        <span>{title}</span>
-                    </div>
-                )
-            })
-            }
+                    return (
+                        <div className={classNames('playlist-item', {active: videoIndex === index})}
+                             onClick={() => {
+                                 setVideoIndex(index);
+                                 setPlaying(true);
+                             }}>
+
+                            <img src={poster} alt={title}/>
+                            <span>{title}</span>
+                        </div>
+                    )
+                })
+                }
+            </div>
         </div>
     )
 }

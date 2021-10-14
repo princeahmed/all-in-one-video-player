@@ -1,21 +1,39 @@
 .aiovp {
   position: relative;
+  z-index: 99999;
 
+  &-controls {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    z-index: 9999;
+
+    button {
+      padding: 0;
+      background: transparent;
+      border: none;
+      margin-right: 10px;
+    }
+
+  }
 
   &-playlist {
     position: absolute;
     width: 300px;
     display: flex;
     flex-flow: column;
-    background: rgba(#000, .5);
+    background: rgba(#000, .7);
     right: 0;
-    //top: 0;
+    height: 100%;
     padding: 10px;
     z-index: 999;
     color: #fff;
 
     .playlist-controls {
       margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       &__autoplay {
         display: flex;
@@ -26,6 +44,18 @@
           margin-left: 10px;
         }
       }
+
+      button {
+        background: transparent;
+        color: #fff;
+        padding: 0;
+      }
+
+    }
+
+    .playlist-items {
+      height: 100%;
+      overflow-y: scroll;
     }
 
     .playlist-item {
@@ -67,14 +97,19 @@
 
   &.pip {
     width: 300px;
-    height: 250px;
     position: fixed;
     right: 30px;
-    bottom: 100px;
+    bottom: 50px;
+    min-height: 150px;
 
     .aiovp_media {
       width: 100% !important;
       height: 100% !important;
+
+      > div {
+        display: flex;
+      }
+
     }
   }
 }

@@ -36,14 +36,6 @@ const SortableItem = SortableElement(({value, keyIndex, isActive, handleActive, 
 
             {isActive &&
             <div className="video-item-body">
-                <div className="form-field">
-                    <TextControl
-                        label={'Title'}
-                        value={title}
-                        onChange={title => handleChange({title})}
-                        help={'Enter the video title.'}
-                    />
-                </div>
 
                 <div className="form-field">
 
@@ -89,6 +81,15 @@ const SortableItem = SortableElement(({value, keyIndex, isActive, handleActive, 
                             help={'Enter the video URL.'}
                         />
                     }
+                </div>
+
+                <div className="form-field">
+                    <TextControl
+                        label={'Title'}
+                        value={title}
+                        onChange={title => handleChange({title})}
+                        help={'Enter the video title.'}
+                    />
                 </div>
 
                 <div className={'form-field'}>
@@ -149,14 +150,6 @@ const SingleVideo = ({videos, handleChange}) => {
         <div className="video-items">
             <div className="video-item single-item">
                 <div className="video-item-body">
-                    <div className="form-field">
-                        <TextControl
-                            label={'Title'}
-                            value={title}
-                            onChange={title => handleChange({title})}
-                            help={'Enter the video title.'}
-                        />
-                    </div>
 
                     <div className="form-field">
 
@@ -202,6 +195,15 @@ const SingleVideo = ({videos, handleChange}) => {
                                 help={'Enter the video URL.'}
                             />
                         }
+                    </div>
+
+                    <div className="form-field">
+                        <TextControl
+                            label={'Title'}
+                            value={title}
+                            onChange={title => handleChange({title})}
+                            help={'Enter the video title.'}
+                        />
                     </div>
 
                     <div className={'form-field'}>

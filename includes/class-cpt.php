@@ -33,7 +33,7 @@ if ( ! class_exists( 'AIOVP_CPT' ) ) {
 				'show_in_menu'        => true,
 				'show_in_nav_menus'   => false,
 				'menu_position'       => 5,
-				'menu_icon'           => AIOVP_ASSETS . '/images/play.svg',
+				'menu_icon'           => AIOVP_ASSETS . '/images/icon.svg',
 				'publicly_queryable'  => false,
 				'exclude_from_search' => true,
 				'has_archive'         => false,
